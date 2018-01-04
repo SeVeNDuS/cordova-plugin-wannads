@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "name": "cordova-plugin-wannads",
+    "cordova_name": "cordova-plugin-wannads",
+    "description": "Cordova plugin for the Wannads",
+    "license": "Commercial - see License file",
+    "platforms": [
+        "android"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        },
+        {
+            "name": "cordova-android",
+            "version": ">=3.1.0"
+        }
+    ]
+}
