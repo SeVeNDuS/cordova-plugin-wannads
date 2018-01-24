@@ -40,18 +40,24 @@ public class WannadsPlugin extends CordovaPlugin {
 
         if (action.equals("showOffers")) {
             String category = "";
+            boolean withActionBar = false;
             try {
                 category = args.getString(0);
             } catch (Exception e) {
                 Log.i(LOGTAG, "(showOffers call) without category");
             }
+            try {
+                withActionBar = args.getBoolean(1);
+            } catch (Exception e) {
+                Log.i(LOGTAG, "(showOffers call) without actionBar");
+            }
 
             if (TextUtils.isEmpty(category) || category.toLowerCase().equalsIgnoreCase("null")) {
                 Log.i(LOGTAG, "(showOffers call) category - all");
-                WannadsSdk.getInstance().showOffers();
+                WannadsSdk.getInstance().showOffers(null, withActionBar);
             } else {
                 Log.i(LOGTAG, "(showOffers call) category - " + category);
-                WannadsSdk.getInstance().showOffers(category);
+                WannadsSdk.getInstance().showOffers(category, withActionBar);
             }
 
             return true;

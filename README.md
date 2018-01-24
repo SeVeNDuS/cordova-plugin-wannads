@@ -27,5 +27,9 @@ cordova plugin add sdk_path\cordova_sdk
    
    // launch offers panel
    WannadsPlugin.showOffers("_CATEGORY");
+   
+   
+   // Android Quirk - show action bar
+   WannadsPlugin.showOffers("_CATEGORY", true);
 
 ```

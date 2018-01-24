@@ -1,0 +1,6 @@
+framework module wannadsiossdk {
+  umbrella header "wannadsiossdk.h"
+
+  export *
+  module * { export * }
+}

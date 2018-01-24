@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.wannads.sdk"
-        version="1.0.0">
+        version="1.0.1">
 
     <name>cordova-plugin-wannads</name>
     <description>Wannads SDK Cordova Plugin</description>
@@ -20,7 +20,6 @@
 
     <!-- android -->
     <platform name="android">
-
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="WannadsPlugin">
                 <param name="android-package" value="com.wannads.sdk.WannadsPlugin"/>
@@ -33,9 +32,24 @@
             <activity android:name="com.wannads.sdk.WannadsOffersActivity" android:exported="false" android:screenOrientation="portrait"/>
         </config-file>
 
-        <source-file src="src/android/libs/wannads-android-sdk-1.0.0.jar" target-dir="libs"/>
+        <source-file src="src/android/libs/wannads-android-sdk-1.0.1.jar" target-dir="libs"/>
         <source-file src="src/android/WannadsPlugin.java" target-dir="src/com/wannads/sdk"/>
     </platform>
 
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="WannadsPlugin">
+                <param name="ios-package" value="WannadsPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/WannadsPlugin.h"/>
+        <source-file src="src/ios/WannadsPlugin.m"/>
+
+        <framework src="src/ios/wannadsiossdk.framework" custom="true" embed="true" />
+
+        <hook type="after_prepare" src="hooks/addEmbedded.js" />
+    </platform>
 
 </plugin>

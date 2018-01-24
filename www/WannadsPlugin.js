@@ -33,7 +33,7 @@ function cordovaExecCommandCallback(command, callback) {
 var WannadsPlugin = {
 
     // General
-    VERSION_STRING: "1.0.0",
+    VERSION_STRING: "1.0.1",
 
 
     // Init Parameter MapObject Key Strings
@@ -55,6 +55,10 @@ var WannadsPlugin = {
 
     showOffers: function (categoryName) {
         cordovaExecCommand('showOffers', categoryName);
+    },
+
+    showOffers: function (categoryName, withActionBar) {
+        cordovaExecCommand('showOffers', categoryName, withActionBar);
     }
 
 
